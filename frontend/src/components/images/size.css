@@ -1,0 +1,8 @@
+.my-image {
+    width: 200px; /* Set the width of the image */
+    height: auto; /* Set the height of the image to maintain aspect ratio */
+    position: absolute; /* Set the position of the image */
+    top: 50%; /* Set the top position of the image */
+    left: 50%; /* Set the left position of the image */
+    transform: translate(-50%, -50%); /* Center the image horizontally and vertically */
+}
