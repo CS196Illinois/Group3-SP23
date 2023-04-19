@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <h2>Students: </h2>
+        <ul>
+            {% for student in data%}
+            <li>
+                <h3>{{student.name}}</h3>
+                <p>Age: {{student.age}}</p>
+                <p>GPA: {{student.gpa}}</p>
+            </li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
