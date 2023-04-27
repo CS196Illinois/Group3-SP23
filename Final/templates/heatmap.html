@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Grade Plotter{% endblock %}
+
+{% block content %}
+    <div class = "text-center mt-4">
+        <h2>Course Heatmap Plotter</h2>
+    </div>
+    <div class= "p-2 mt-4 text-center">
+        <form action="{{url_for('heatmap_plot')}}", method="POST">
+            <input list="courses" name="course" placeholder="subject">
+            <datalist id="courses">
+                {% for sub in subjects %}
+                <option value="{{sub}}">
+                {% endfor %}
+            </datalist>
+
+            <input type="number" name="course number" placeholder="number">
+            <input type="number" name="year" placeholder="year">
+            <input list="season" name="season" placeholder="season">
+            <datalist id="season">
+                <option value = "Spring">
+                <option value = "Fall">
+            </datalist>
+            <input type="submit">
+            
+        </form>
+    </div>
+    {% if invalid is sameas true %}
+        <div class = "text-center">
+            <p>Invalid Subject Selection, please choose a valid subject</p>
+        </div>
+    {% endif %}
+    {% if graph is sameas true %}
+        <div class="text-center">
+            <img src = "data:image/png;base64, {{image_url}}">
+        </div>
+    {% endif %}
+{% endblock %}
