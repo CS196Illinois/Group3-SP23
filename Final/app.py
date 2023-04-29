@@ -35,6 +35,10 @@ def GetAllSubject():
     subjects = df['Subject'].unique()
     return subjects
 
+def addlabels(x,y):
+    for i in range(len(x)):
+        plt.text(i,y[i],y[i], ha = 'center')
+ 
 def get_plot_by_subject(subject):
         img = BytesIO()
         # x-coordinates of left sides of bars 
@@ -48,6 +52,9 @@ def get_plot_by_subject(subject):
         plt.bar(left, height,
                 width = 0.8, color = ['red', 'green'])
         
+        # add label 
+        addlabels(left, height)
+
         # naming the x-axis
         plt.xlabel(subject)
         # naming the y-axis
@@ -73,6 +80,8 @@ def get_plot_by_course(subject, course_number):
         plt.bar(left, height,
                 width = 0.8, color = ['red', 'green'])
         
+        # add label 
+        addlabels(left, height)
         # naming the x-axis
         plt.xlabel( temp['Course Title'].unique()[0])
         # naming the y-axis
