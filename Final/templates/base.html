@@ -9,7 +9,9 @@
     <body>
         <nav style = "background-color: royalblue" class = "navbar shadow-sm">
             <a class = "text-white navbar-brand ml-4" href="{{url_for('home')}}">Home</a>
-            <a class = "text-white navbar-item mr-4" href="{{url_for('plotgrade')}}">Grade Plotter</a>
+            <a class = "text-white navbar-item mr-4" href="{{url_for('plotgrade')}}">Subject Plotter</a>
+            <a class = "text-white navbar-item mr-4" href="{{url_for('plotcoursegrade')}}">Course Plotter</a>
+            <a class = "text-white navbar-item mr-4" href="{{url_for('heatmap')}}">Heatmap Plotter</a>
         </nav>
         <div class = "container mt-2 mb-2">
             {% block content %}

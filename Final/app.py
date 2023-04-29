@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from flask import Flask, render_template, request, jsonify
 import pandas as pd
+import matplotlib
 import matplotlib.pyplot as plt
+matplotlib.use('Agg')
 from io import BytesIO
 import base64
 import seaborn as sns
